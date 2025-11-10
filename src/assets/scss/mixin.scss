@@ -1,0 +1,90 @@
+/**
+* flex布局居中
+* @param {String} $direction 主轴方向, row: 水平, column: 垂直
+*/
+@mixin flex-center($direction: row) {
+    display: flex; // 弹性布局
+    flex-direction: $direction; // 主轴方向
+    // 主轴对齐方式, center: 居中, flex-start: 起点对齐, flex-end: 终点对齐, space-between: 两端对齐, space-around: 平均分布
+    justify-content: center;
+    // 侧轴对齐方式, center: 居中, flex-start: 起点对齐, flex-end: 终点对齐, stretch: 拉伸填满
+    align-items: center;
+ }
+/**
+* 背景图片
+* @param {String} $img 图片路径
+* @param {String} $position 背景位置, 默认居中
+* @param {String} $size 背景尺寸, 默认cover
+* @param {String} $repeat 背景是否重复, 默认不重复  no-repeat
+*/
+@mixin bg-image($img, $position: center, $size:cover, $repeat: no-repeat) {
+    background-image: $img; // 背景图片
+    background-position: $position; // 背景位置
+    background-size: $size; // 背景尺寸
+    background-repeat: $repeat; // 背景是否重复
+    // background: $img $positon $repeat;
+    // background-size: $size;
+}
+/**
+* 定位位置
+* @param {String} $position 定位方式, absolute: 绝对定位, fixed: 固定定位, relative: 相对定位
+* @param {Number} $top 距离顶部位置
+* @param {Number} $right 距离右侧位置
+* @param {Number} $bottom 距离底部位置
+* @param {Number} $left 距离左侧位置
+*/
+@mixin position($position, $top, $right, $bottom, $left){
+    position: $position; // 定位方式
+    top: $top; // 距离顶部位置
+    right: $right; // 距离右侧位置
+    bottom: $bottom; // 距离底部位置
+    left: $left; // 距离左侧位置
+}
+/**
+* 文字溢出省略号
+* @param {Number} $line 行数, 默认2行
+*/
+@mixin text-ellipsis($line: 2) {
+    display: -webkit-box; // 弹性盒子模型
+    -webkit-box-orient: vertical; // 垂直排列子元素
+    -webkit-line-clamp: $line; // 显示的行数
+    overflow: hidden; // 超出部分隐藏
+    text-overflow: ellipsis; // 文字溢出显示省略号
+    word-break: break-all; // 单词内换行
+}
+/**
+* 盒子大小
+* @param {Number} $width 宽度
+* @param {Number} $height 高度
+*/
+@mixin wh($width, $height){
+    width: $width; // 宽度
+    height: $height; // 高度
+}
+/**
+* 弹性布局
+* @param {String} $direction 主轴方向, row: 水平, column: 垂直
+* @param {String} $justify 主轴对齐方式,
+* @param {String} $align 侧轴对齐方式,
+*/
+@mixin flex($direction: row, $justify, $align){
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+}
+/**
+* 宫格布局
+* @param {Number} $cols 列数
+* @param {Number} $rows 行数
+* @param {Number} $gapColumn 列间距
+* @param {Number} $gapRow 行间距
+*/
+@mixin grid($cols, $rows, $gapColumn, $gapRow){
+    display: grid; // 宫格布局
+    grid-template-columns: $cols; // 列数
+    grid-template-rows: $rows; // 行数
+    grid-column-gap: $gapColumn; // 列间距
+    grid-row-gap: $gapRow; // 行间距
+}
+

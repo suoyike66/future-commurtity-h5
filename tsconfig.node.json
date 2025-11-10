@@ -1,0 +1,37 @@
+{
+  "compilerOptions": {
+    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.node.tsbuildinfo",
+    "target": "ES2023",
+    "lib": ["ES2023"],
+    "module": "ESNext",
+    "skipLibCheck": true,
+
+    /* Bundler mode */
+    "moduleResolution": "node", // 选择模块解析策略, node: Node.js风格, classic: TypeScript风格
+    "allowImportingTsExtensions": true, // 允许导入带有.ts扩展名的模块
+    "verbatimModuleSyntax": true,
+    "moduleDetection": "force",
+    "noEmit": true, 
+
+    /* Linting */
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "erasableSyntaxOnly": true,
+    "noFallthroughCasesInSwitch": false, // 关闭 switch 穿透检查 switch case
+    "noUncheckedSideEffectImports": true,
+    "types": ["node"], // 指定要包含在编译中的类型声明文件
+    // 指定基础目录 '@/assetss/vite.svg'
+    "baseUrl": ".",
+    "paths": { // 配置模块解析的别名路径
+      "@/*": ["src/*"],
+      "~@/*": ["src/*"]
+    }
+  },
+  // include、exclude、files三者只能存在一个
+  // "include": ["vite.config.ts"]
+  // 指定要包含在编译中的文件
+  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
+  // 指定要排除在编译之外的文件
+  // "exclude": ["node_modules", "dist", "src/**/*.spec.ts", "src/**/*.test.ts"]
+}

@@ -1,0 +1,7 @@
+/* 引入第三方或者自定义字体 */
+@font-face {
+  font-family: 'PangMenZhengDaoTi';
+  src: url('./PangMenZhengDaoTi.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
