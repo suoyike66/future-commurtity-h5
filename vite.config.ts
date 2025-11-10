@@ -3,6 +3,7 @@ import vue from '@vitejs/plugin-vue'
 import * as path from 'path'
 // https://vite.dev/config/
 export default defineConfig({
+  base: '/future-commurtity-h5/', 
   plugins: [vue()],
   resolve: {
     alias: { // 路径别名
