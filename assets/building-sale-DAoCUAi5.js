@@ -1,0 +1,1 @@
+import{P as a,G as l}from"./base-util-LDrhyDoM.js";const t="/h5/building_rental",r={page:e=>new a(`${t}/list`,e).request(),detail:e=>new l(`${t}/${e}`).request()},s="/h5/building_sale",o={page:e=>new a(`${s}/list`,e).request(),detail:e=>new l(`${s}/${e}`).request()};export{o as a,r};
