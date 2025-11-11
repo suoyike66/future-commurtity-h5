@@ -1,6 +1,6 @@
 import { useSystemStore } from '@/store/system'
 import { KeepAlive } from 'vue'
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHistory ,createWebHashHistory} from 'vue-router'
 import type { NavigationGuardNext, RouteLocationNormalized, RouteLocationNormalizedLoaded } from 'vue-router'
 const routers = [
     {
@@ -56,8 +56,8 @@ const routers = [
 ]
 // 创建路由实例{name}
 const router = createRouter({
-    history: createWebHistory(), // HTML5模式
-    // history: createWebHashHistory(), // hash模式 /#/login
+    // history: createWebHistory(), // HTML5模式
+    history: createWebHashHistory(), // hash模式 /#/login
     routes: routers
 })
 // 导航守卫
